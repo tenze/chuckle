@@ -61,4 +61,3 @@ module.exports = {
   getUserById,
   getUserByUsername
 };
-

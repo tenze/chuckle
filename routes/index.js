@@ -1,5 +1,5 @@
-const indexRouter                = require('express').Router();
-const { chuckjoke }         = require('../services/chucknorris');
+const indexRouter                 = require('express').Router();
+const { chuckjoke }               = require('../services/chucknorris');
 
 
 indexRouter.get('/', chuckjoke, (req, res)=>{

@@ -1,32 +1,35 @@
 const router              = require('express').Router();
 const { authenticate }    = require('../lib/auth');
-const { searchMusic }     = require('../services/chucknorris');
+const { chuckjoke }         = require('../services/chucknorris');
 const { getFavorites,
         saveFavorite,
         deleteFavorites } = require('../models/favorites');
 
-router.get('/', authenticate, getFavorites, (req, res) => {
-  res.render('music/index', {
+router.get('/', chuckjoke, authenticate,  (req, res) => {
+  res.render('joke/index', {
     user: res.user,
     results: res.results || [],
+    chuckjoke: res.value,
     favorites: res.favorites || []
   });
 });
 
-router.post('/search', authenticate, searchMusic, getFavorites, (req,res) => {
-  res.render('music/index', {
-    user: res.user,
-    results: res.results || [],
-    favorites: res.favorites || []
-  });
-});
+// router.post('/search', authenticate, chuckjoke, getFavorites, (req,res) => {
+//   res.render('joke/index', {
+//     user: res.user,
+//     results: res.results || [],
+//     chuckjoke: res.value,
+//     favorites: res.favorites || []
+//   });
+// });
 
 router.delete('/favorites/:id', deleteFavorites, (req, res) => {
-  res.redirect('/music');
+  res.redirect('/joke');
 });
 
 router.post('/favorites', saveFavorite, (req, res) => {
-  res.redirect('/music');
+  res.redirect('/joke');
 });
 
 module.exports = router;
+

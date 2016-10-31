@@ -74,7 +74,17 @@ ul{
   padding: 10px 5px 5px 10px;
   text-align: justify;
   box-shadow: 10px 10px 5px #888888;
-  font-size: 1.5em;
+  font-size: .9em;
 }
-
+.favSearch{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+}
+h1{
+  margin-left: 25px;
+}
+.form {
+   margin-left: 0 auto;
+}
 

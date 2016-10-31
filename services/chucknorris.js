@@ -5,8 +5,8 @@ const API_URL      = 'http://api.icndb.com/jokes/random/5';
 function chuckjoke (req,res,next) {
   fetch(`${API_URL}`)
   .then(apiResponse => {
-    console.log('THIS IS API RESPONSE: ' + apiResponse)
-    return apiResponse.json()
+    console.log('THIS IS API RESPONSE: ' + apiResponse);
+    return apiResponse.json();
   })
   .then((data) => {
       res.value = data;

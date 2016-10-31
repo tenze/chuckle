@@ -14,12 +14,13 @@ const authRouter = express.Router();
 
 authRouter.post('/', logIn, (req, res) => {
     res.redirect('/users/profile');
+
 });
 
 // Logout by assigning null to the userId in the session
 authRouter.delete('/', (req, res) => {
   req.session.userId = null;
-  res.redirect('/');
+  res.redirect('/users/index');
 });
 
 module.exports = authRouter;
