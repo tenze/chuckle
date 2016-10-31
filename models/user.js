@@ -1,4 +1,4 @@
-/* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
+ /* eslint no-multi-spaces: ["error", { exceptions: { "VariableDeclarator": true } }] */
 /* eslint no-param-reassign: ["error", { "props": false }] */
 
 const { ObjectID } = require('mongodb');

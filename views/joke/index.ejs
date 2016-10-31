@@ -4,20 +4,29 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <link rel="stylesheet" href="http://localhost:3000/css/style.css">
-  <title>iTunes Search</title>
+  <title>Chuck Norris Joke Search</title>
   <link rel='stylesheet' href='' id='form'>
 </head>
 <body>
-  <h1><%= user.username %>, favorite Chuck Norris line!</h1>
-  <form action="/joke" method="post" id=form>
+<header>
+  <div class='links'
+  <a href="/users/profile" name="top">Home</a>
+  <form action="/auth?_method=DELETE" method="post">
+      <input type="submit" value="Logout">
+  </form>
+</header>
+<div class=profile>
+  <h1><%= user.username %>'s, favorite Chuck Norris line!</h1>
     <div class=container>
      <ul class="jokeul">
        <% for(let i = 0; i < chuckjoke.value.length; i++){ %>
           <div class="list">
             <%= chuckjoke.value[i].joke %>
-              <input type="hidden" name="favorite[value[i]]" value="<%= chuckjoke.value[i].joke  %>">
+            <form action="/joke/favorites" method="post" id=form>
+              <input type="hidden" name="favorite[CollectionName]" value="<%= chuckjoke.value[i].joke  %>">
               <input type="submit" value="SAVE">
-              </form>
+
+            </form>
           </div>
         <% }; %>
         </div>
@@ -27,32 +36,19 @@
   <div id="favorites-container">
     <h2><%= user.username %>'s Favorites:</h2>
     <% favorites.forEach((fave) => { %>
-      <div class="fave">
-        <p><%= fave.value[i].joke %></p>
-        <form action="/joke/favorites/<%= fave._id %>?_method=DELETE" method="post">
 
+      <div class="fave">
+        <p><%= console.log('this is fave ' + Object.keys(fave)) %></p>
+        <p><%= fave.CollectionName %></p>
+        <form action="/joke/favorites/<%= fave._id %>?_method=DELETE" method="post">
         <input type="submit" value="Delete">
         </form>
       </div>
     <% }) %>
   </div>
-  <!-- <div id="search-results-container">
-    <h2>Search Results:</h2>
-    <% results.forEach((album) => { %>
-      <div class="search-results">
-        <img src="<%= album.artworkUrl100 %>" alt="">
-        <p><%= album.artistName %></p>
-        <p><%= album.collectionName %></p>
-        <form action="/music/favorites" method="POST" id='form'>
-          <input type="hidden" name="favorite[collectionName]" value="<%= album.collectionName %>">
-          <input type="hidden" name="favorite[artistName]" value="<%= album.artistName %>">
-          <input type="hidden" name="favorite[artworkUrl100]" value="<%= album.artworkUrl100 %>">
-          <input type="submit" value="SAVE">
-        </form>
-      </div>
-    <% }) %>
-  </div> -->
+
   </div>
-  <a href="/users/profile">Home</a>
+  </div>
+
 </body>
 </html>

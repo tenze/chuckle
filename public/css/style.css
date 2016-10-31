@@ -6,9 +6,13 @@ html, body, img, header{
 }
 body{
   height: 100vh;
-  background: linear-gradient(to top,#e8f0ff,#cfe0fc,#9fc2f9);
+  background-image: url('https://media.giphy.com/media/jVJmFAV8xbIys/giphy.gif');
+  /*background: linear-gradient(to top,#e8f0ff,#cfe0fc,#9fc2f9);*/
+  background-repeat: no-repeat;
+
+   background-size: cover;
 }
-header{
+header a{
   height: 55px;
   overflow:auto;
   margin-bottom: 20px;
@@ -19,6 +23,13 @@ header ul{
   overflow: hidden;
   margin: 0;
   padding: 0;
+}
+.links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 10px;
+  color: white;
 }
 
 li {
@@ -37,8 +48,6 @@ li a {
   width: 100px;
   height: 100px;
   float: right;
-
-
 }
 #pic{
   width: 200px;
@@ -53,15 +62,6 @@ li a {
   position: absolute;
   z-index: 2;
 }
-.container{
-
-}
-.jokeul{
-
-}
-ul{
-
-}
 .list{
   font-family: museo-sans,sans-serif;
   border: 1px green solid;
@@ -70,7 +70,6 @@ ul{
   color: white;
   width: 40%;
   margin-left: 3px;
-
   padding: 10px 5px 5px 10px;
   text-align: justify;
   box-shadow: 10px 10px 5px #888888;
@@ -78,8 +77,10 @@ ul{
 }
 .favSearch{
   display: flex;
-  flex-direction: row-reverse;
+  margin-right: auto;
   justify-content: space-around;
+  margin-right: auto;
+  color: white;
 }
 h1{
   margin-left: 25px;
@@ -88,3 +89,6 @@ h1{
    margin-left: 0 auto;
 }
 
+.profile{
+  padding: 10px;
+}
