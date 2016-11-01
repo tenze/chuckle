@@ -1,0 +1,15 @@
+                  chuckleDay
+chukleDay app is all about joke based on Actor Chuck Norris. 
+For regular users, it will show 5 jokes about him. 
+It will generate 5 random jokes about him each time user refreshes the page. 
+For registered user there will be an extra feature of save and delete. 
+where he/she will be able save the jokes in Favorite or  delete them them from their favorite folders.
+
+
+
+
+Big Thanks: 
+  The Internet Chuck Norris Database www.ICNDb.com for making api freely available.
+
+
+Also thanks to: Daniel, Hadas, Mohammed, Sam, Valeria and others for help
