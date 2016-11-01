@@ -15,40 +15,38 @@
       <input type="submit" value="Logout">
   </form>
 </header>
-<div class=profile>
-  <h1><%= user.username %>'s, favorite Chuck Norris line!</h1>
-    <div class=container>
-     <ul class="jokeul">
-       <% for(let i = 0; i < chuckjoke.value.length; i++){ %>
-          <div class="list">
-            <%= chuckjoke.value[i].joke %>
-            <form action="/joke/favorites" method="post" id=form>
-              <input type="hidden" name="favorite[CollectionName]" value="<%= chuckjoke.value[i].joke  %>">
-              <input type="submit" value="SAVE">
+<div class='wrapper'>
+  <div class=profile>
+    <h1><%= user.username %>'s, favorite Chuck Norris line!</h1>
 
+
+         <% for(let i = 0; i < chuckjoke.value.length; i++){ %>
+            <div class="list">
+              <%= chuckjoke.value[i].joke %>
+              <form action="/joke/favorites" method="post" id=form>
+                <input type="hidden" name="favorite[CollectionName]" value="<%= chuckjoke.value[i].joke  %>">
+                <input type="submit" value="SAVE">
+
+              </form>
+            </div>
+          <% }; %>
+
+  </div>
+    <div class='favSearch'>
+
+        <h2><%= user.username %>'s Favorites:</h2>
+          <% favorites.forEach((fave) => { %>
+
+            <p><%= console.log('this is fave ' + Object.keys(fave)) %></p>
+            <p><%= fave.CollectionName %></p>
+            <form action="/joke/favorites/<%= fave._id %>?_method=DELETE" method="post">
+            <input type="submit" value="Delete">
             </form>
-          </div>
-        <% }; %>
-        </div>
-    </ul>
+
+        <% }) %>
+
+    </div>
 </div>
-  <div class='favSearch'>
-  <div id="favorites-container">
-    <h2><%= user.username %>'s Favorites:</h2>
-    <% favorites.forEach((fave) => { %>
-
-      <div class="fave">
-        <p><%= console.log('this is fave ' + Object.keys(fave)) %></p>
-        <p><%= fave.CollectionName %></p>
-        <form action="/joke/favorites/<%= fave._id %>?_method=DELETE" method="post">
-        <input type="submit" value="Delete">
-        </form>
-      </div>
-    <% }) %>
-  </div>
-
-  </div>
-  </div>
 
 </body>
 </html>
