@@ -9,8 +9,7 @@ body{
   background-image: url('https://media.giphy.com/media/jVJmFAV8xbIys/giphy.gif');
   /*background: linear-gradient(to top,#e8f0ff,#cfe0fc,#9fc2f9);*/
   background-repeat: no-repeat;
-
-   background-size: cover;
+  background-size: cover;
 }
 header a{
   height: 55px;
@@ -29,9 +28,7 @@ header ul{
   flex-direction: row;
   padding: 10px;
 }
-
 li {
-
 padding-right: 10px;
 padding-top: 10px;
 width: 50%;
@@ -68,7 +65,7 @@ li a {
 }
 .list{
   font-family: museo-sans,sans-serif;
-  border: 1px green solid;
+  border: .5px #f45042 solid;
   display: block;
   margin-top: 10px;
   color: white;
@@ -76,7 +73,7 @@ li a {
   margin-left: 3px;
   padding: 10px 5px 5px 10px;
   text-align: justify;
-  box-shadow: 10px 10px 5px #888888;
+  box-shadow: 9px 9px 5px #fc9288;
   font-size: .9em;
 }
 .favSearch{
