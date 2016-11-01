@@ -1,7 +1,6 @@
 {
   "name": "chuckleday",
   "version": "1.0.0",
-  "private": true,
   "description": "",
   "engines":{
     "node": "6.6.0"
