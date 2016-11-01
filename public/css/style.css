@@ -24,12 +24,10 @@ header ul{
   margin: 0;
   padding: 0;
 }
-.links{
+.nav{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin-top: 10px;
-  color: white;
+  padding: 10px;
 }
 
 li {
