@@ -17,7 +17,7 @@
 </header>
 <div class='wrapper'>
   <div class=profile>
-    <h1><%= user.username %>'s, favorite Chuck Norris line!</h1>
+    <h1><%= user.username %> -- Save to your favorites list</h1>
 
 
          <% for(let i = 0; i < chuckjoke.value.length; i++){ %>
@@ -33,16 +33,15 @@
 
   </div>
     <div class='favSearch'>
-
         <h2><%= user.username %>'s Favorites:</h2>
           <% favorites.forEach((fave) => { %>
-
-            <p><%= console.log('this is fave ' + Object.keys(fave)) %></p>
-            <p><%= fave.CollectionName %></p>
-            <form action="/joke/favorites/<%= fave._id %>?_method=DELETE" method="post">
-            <input type="submit" value="Delete">
-            </form>
-
+            <div class="list">
+              <p><%= console.log('this is fave ' + Object.keys(fave)) %></p>
+              <p><%= fave.CollectionName %></p>
+              <form action="/joke/favorites/<%= fave._id %>?_method=DELETE" method="post">
+                <input type="submit" value="Delete">
+              </form>
+            </div>
         <% }) %>
 
     </div>
