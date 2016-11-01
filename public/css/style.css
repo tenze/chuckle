@@ -28,6 +28,12 @@ header ul{
   flex-direction: row;
   padding: 10px;
 }
+.links{
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  justify-content: space-between;
+}
 li {
 padding-right: 10px;
 padding-top: 10px;
